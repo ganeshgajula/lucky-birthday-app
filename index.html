@@ -10,21 +10,37 @@
     <header>
       <h1>Is your birthday lucky ?</h1>
     </header>
-    <section>
-      <div>
-        <input type="date" required id="dateInput" />
+    <main>
+      <section id="inputArea">
+        <div>
+          <input type="date" required id="dateInput" />
+        </div>
+        <div>
+          <input
+            type="number"
+            id="numberInput"
+            required
+            min="1"
+            placeholder="Enter your lucky number"
+          />
+        </div>
+        <button id="submitBtn">Check</button>
+      </section>
+
+      <section id="resultArea">
+        <div id="result"></div>
+      </section>
+      <div id="privacyMsg">
+        <h3>Privacy Policy</h3>
+        <p>
+          Kindly note that we do not store any kind of data of our users. This
+          app is solely based on client side scripting language, there is no
+          database linked to store any kind of data.
+        </p>
+        <button id="close-button">X</button>
       </div>
-      <div>
-        <input
-          type="number"
-          id="numberInput"
-          required
-          min="1"
-          placeholder="Enter your lucky number"
-        />
-      </div>
-      <button id="submitBtn">Submit</button>
-    </section>
+    </main>
+
     <script src="app.js"></script>
   </body>
 </html>

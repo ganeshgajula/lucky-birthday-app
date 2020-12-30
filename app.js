@@ -1,6 +1,18 @@
 dateInput = document.querySelector("#dateInput");
 let numberInput = document.querySelector("#numberInput");
 let submitBtn = document.querySelector("#submitBtn");
+let resultText = document.querySelector("#result");
+let privacyMsg = document.querySelector("#privacyMsg");
+let btnClose = document.querySelector("#close-button");
+
+window.addEventListener("load", displayPrivacyMsg);
+// privacyMsg.style.display = "none";
+
+function displayPrivacyMsg() {
+  setTimeout(function () {
+    privacyMsg.style.display = "none";
+  }, 10000);
+}
 
 function btnClickHandler() {
   const dateValue = dateInput.value;
@@ -30,11 +42,22 @@ function btnClickHandler() {
   const result = sum % luckyNumber === 0 ? true : false;
 
   if (result) {
-    console.log("Congratulations your birthday is lucky");
+    resultText.innerHTML = `
+    <p>Congratulations! your birthday is lucky. </p>
+    <img src="https://media.giphy.com/media/l2Sq2ySYEIl3mzVgk/giphy.gif" width="300px" height="250px" alt="celebration gif">
+    `;
   } else {
-    console.log("Your birthday is not lucky");
-    console.log(`You missed by ${sum % luckyNumber} days`);
+    resultText.innerHTML = `
+    <p>Sorry, your birthday is not lucky.</p
+    <p>You missed by ${sum % luckyNumber} days</p>
+    <img src="https://media.giphy.com/media/BEob5qwFkSJ7G/giphy.gif" width="300px" height="250px" alt="sad gif">
+    `;
   }
 }
 
+function hidePrivacy() {
+  privacyMsg.style.display = "none";
+}
+
 submitBtn.addEventListener("click", btnClickHandler);
+btnClose.addEventListener("click", hidePrivacy);
