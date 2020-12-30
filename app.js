@@ -4,6 +4,7 @@ let submitBtn = document.querySelector("#submitBtn");
 let resultText = document.querySelector("#result");
 let privacyMsg = document.querySelector("#privacyMsg");
 let btnClose = document.querySelector("#close-button");
+let footer = document.querySelector(".footer");
 
 window.addEventListener("load", displayPrivacyMsg);
 // privacyMsg.style.display = "none";
@@ -53,6 +54,8 @@ function btnClickHandler() {
     <img src="https://media.giphy.com/media/BEob5qwFkSJ7G/giphy.gif" width="300px" height="250px" alt="sad gif">
     `;
   }
+
+  footer.style.position = "static";
 }
 
 function hidePrivacy() {
