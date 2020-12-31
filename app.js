@@ -55,13 +55,13 @@ function btnClickHandler() {
     if (result) {
       resultText.innerHTML = `
     <p>Congratulations! your birthday is lucky. </p>
-    <img src="https://media.giphy.com/media/l2Sq2ySYEIl3mzVgk/giphy.gif" width="300px" height="250px" alt="celebration gif">
+    <img src="lucky-giphy.gif" width="300px" height="250px" alt="celebration gif">
     `;
     } else {
       resultText.innerHTML = `
     <p>Sorry, your birthday is not lucky.</p
     <p>You missed by ${sum % luckyNumber} days</p>
-    <img src="https://media.giphy.com/media/BEob5qwFkSJ7G/giphy.gif" width="300px" height="250px" alt="sad gif">
+    <img src="unlucky-giphy.gif" width="300px" height="250px" alt="sad gif">
     `;
     }
 
