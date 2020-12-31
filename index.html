@@ -13,10 +13,10 @@
     <title>lucky birthday</title>
   </head>
   <body>
-    <header>
-      <h1>Is your birthday lucky ?</h1>
-    </header>
     <main>
+      <header>
+        <h1>Is your birthday lucky ?</h1>
+      </header>
       <section id="inputArea">
         <div>
           <input type="date" required id="dateInput" />
@@ -34,7 +34,9 @@
       </section>
 
       <section id="resultArea">
-        <div id="result"></div>
+        <div class="result-card">
+          <div id="result"></div>
+        </div>
       </section>
       <div id="privacyMsg">
         <h3>Privacy Policy</h3>
@@ -64,8 +66,13 @@
         <a target="_blank" href="https://dev.to/ganeshgajula"
           ><i class="fab fa-dev fa-2x"></i
         ></a>
+        <a target="_blank" href="https://ganeshgajula.netlify.app/"
+          ><i class="fas fa-briefcase fa-2x"></i
+        ></a>
       </div>
-      <p>&copy; 2020 | NEOCODER</p>
+      <p class="copyright-info">
+        &copy; 2020 | NEOCODER | <span class="privacy"> Privacy Policy</span>
+      </p>
     </footer>
     <script src="app.js"></script>
   </body>

@@ -5,14 +5,22 @@ let resultText = document.querySelector("#result");
 let privacyMsg = document.querySelector("#privacyMsg");
 let btnClose = document.querySelector("#close-button");
 let footer = document.querySelector(".footer");
+let resultCard = document.querySelector(".result-card");
+const privacy = document.querySelector(".privacy");
 
-window.addEventListener("load", displayPrivacyMsg);
+window.addEventListener("load", hidePrivacyMsg);
 // privacyMsg.style.display = "none";
+resultCard.style.display = "none";
 
-function displayPrivacyMsg() {
+function hidePrivacyMsg() {
   setTimeout(function () {
     privacyMsg.style.display = "none";
   }, 10000);
+}
+
+function displayPrivacyMsg() {
+  privacyMsg.style.display = "block";
+  hidePrivacyMsg();
 }
 
 function btnClickHandler() {
@@ -56,6 +64,7 @@ function btnClickHandler() {
   }
 
   footer.style.position = "static";
+  resultCard.style.display = "block";
 }
 
 function hidePrivacy() {
@@ -64,3 +73,4 @@ function hidePrivacy() {
 
 submitBtn.addEventListener("click", btnClickHandler);
 btnClose.addEventListener("click", hidePrivacy);
+privacy.addEventListener("click", displayPrivacyMsg);
