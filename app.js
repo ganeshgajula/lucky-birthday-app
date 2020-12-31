@@ -1,4 +1,4 @@
-dateInput = document.querySelector("#dateInput");
+let dateInput = document.querySelector("#dateInput");
 let numberInput = document.querySelector("#numberInput");
 let submitBtn = document.querySelector("#submitBtn");
 let resultText = document.querySelector("#result");
@@ -38,33 +38,41 @@ function btnClickHandler() {
   // console.log(year);
   // console.log(month);
   // console.log(date);
-  let sum = 0;
-  while (birthDate > 0) {
-    let remainder;
-    remainder = birthDate % 10;
-    sum = sum + remainder;
-    // console.log(remainder);
-    birthDate = Math.floor(birthDate / 10);
-  }
-  console.log("Sum is ", sum);
+  if (dateValue !== "" && luckyNumber !== "") {
+    let sum = 0;
+    while (birthDate > 0) {
+      let remainder;
+      remainder = birthDate % 10;
+      sum = sum + remainder;
+      // console.log(remainder);
+      birthDate = Math.floor(birthDate / 10);
+    }
+    console.log("Sum is ", sum);
 
-  const result = sum % luckyNumber === 0 ? true : false;
+    const result = sum % luckyNumber === 0 ? true : false;
 
-  if (result) {
-    resultText.innerHTML = `
+    if (result) {
+      resultText.innerHTML = `
     <p>Congratulations! your birthday is lucky. </p>
     <img src="https://media.giphy.com/media/l2Sq2ySYEIl3mzVgk/giphy.gif" width="300px" height="250px" alt="celebration gif">
     `;
-  } else {
-    resultText.innerHTML = `
+    } else {
+      resultText.innerHTML = `
     <p>Sorry, your birthday is not lucky.</p
     <p>You missed by ${sum % luckyNumber} days</p>
     <img src="https://media.giphy.com/media/BEob5qwFkSJ7G/giphy.gif" width="300px" height="250px" alt="sad gif">
     `;
-  }
+    }
 
-  footer.style.position = "static";
-  resultCard.style.display = "block";
+    footer.style.position = "static";
+    resultCard.style.display = "block";
+  } else if (dateValue === "" && luckyNumber === "") {
+    alert("Please enter both the input values");
+  } else if (dateValue === "" && luckyNumber !== "") {
+    alert("Please enter your date of birth");
+  } else if (dateValue !== "" && luckyNumber === "") {
+    alert("Please enter your lucky number");
+  }
 }
 
 function hidePrivacy() {
