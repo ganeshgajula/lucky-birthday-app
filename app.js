@@ -7,6 +7,7 @@ let btnClose = document.querySelector("#close-button");
 let footer = document.querySelector(".footer");
 let resultCard = document.querySelector(".result-card");
 const privacy = document.querySelector(".privacy");
+const resetBtn = document.querySelector("#resetBtn");
 
 window.addEventListener("load", hidePrivacyMsg);
 // privacyMsg.style.display = "none";
@@ -79,6 +80,14 @@ function hidePrivacy() {
   privacyMsg.style.display = "none";
 }
 
+function resetAll() {
+  dateInput.value = "";
+  numberInput.value = "";
+  resultCard.style.display = "none";
+  footer.style.position = "fixed";
+}
+
 submitBtn.addEventListener("click", btnClickHandler);
 btnClose.addEventListener("click", hidePrivacy);
 privacy.addEventListener("click", displayPrivacyMsg);
+resetBtn.addEventListener("click", resetAll);

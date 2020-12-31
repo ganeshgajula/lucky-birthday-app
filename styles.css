@@ -41,6 +41,18 @@ button {
   cursor: pointer;
 }
 
+#submitBtn {
+  font-size: 1.2rem;
+  background-color: #013220;
+  color: #fff;
+  margin-right: 1rem;
+}
+#resetBtn {
+  font-size: 1.2rem;
+  /* background-color: #013220; */
+  color: #013220;
+}
+
 #close-button {
   padding: 0.2rem 0.5rem;
   border: none;
